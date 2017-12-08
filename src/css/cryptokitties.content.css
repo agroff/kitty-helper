@@ -1,0 +1,133 @@
+html body .KittyStatus--multiple .KittyStatus-item:first-child .KittyStatus-itemText {
+    max-width : 700px;
+}
+
+.KittyCard-image {
+    z-index : 2;
+}
+
+.kitty-helper-rarity-scale {
+
+    position           : absolute;
+    width              : 100%;
+    bottom             : 0px;
+    -webkit-transition : width 0.3s, bottom 0.3s;
+    transition         : width 0.3s, bottom 0.3s;
+    z-index            : 3;
+}
+
+.KittyCard-wrapper:hover .kitty-helper-rarity-scale {
+    width  : 97%;
+    bottom : 5px;
+}
+
+.kitty-helper-rarity-scale .rarity-score {
+    background-color      : hsla(0, 0%, 100%, .4);
+    background-blend-mode : soft-light;
+    float                 : left;
+    width                 : 10%;
+    border-radius         : 50%;
+    color                 : #353535;
+    font-size             : 16px;
+    padding               : 5px 5px;
+    line-height           : 16px;
+    margin-left           : 5px;
+    margin-bottom         : 5px;
+    height                : 25px;
+    margin-top            : -2px;
+}
+
+.kitty-helper-rarity-scale .rarity-attributes {
+    float : right;
+    width : 87%;
+}
+
+.kitty-helper-rarity-scale .rarity-attributes .rarity-attribute {
+    float            : left;
+    width            : 30%;
+    font-size        : 12px;
+    background-color : white;
+    border-radius    : 13px;
+    margin           : 1%;
+    height           : 20px;
+    overflow         : hidden;
+    white-space      : nowrap;
+    text-align       : left;
+    line-height      : 20px;
+    padding-right    : 6px;
+}
+
+.kitty-helper-rarity-scale .rarity-row-one {
+    width  : 100%;
+    height : 25px;
+}
+
+.kitty-helper-rarity-scale .rarity-row-two {
+    height             : 0px;
+    overflow           : hidden;
+    width              : 100%;
+    -webkit-transition : height 0.3s;
+    transition         : height 0.3s;
+}
+
+.KittyCard.rarity-hovered .kitty-helper-rarity-scale .rarity-row-two {
+    height : 50px;
+}
+
+.KittyCard-image {
+    -webkit-transition : top 0.3s;
+    transition         : top 0.3s;
+    -webkit-transition-delay: 0.1s;
+    transition-delay: 0.1s;
+}
+
+.KittyCard--responsive.rarity-hovered > .KittyCard-image {
+    top : 39%;
+}
+
+.kitty-helper-rarity-scale .rarity-row-two .rarity-attributes {
+    width : 100%;
+}
+
+.kitty-helper-rarity-scale .rarity-row-two .rarity-attributes .rarity-attribute {
+    width : auto;
+    margin-left:3%
+}
+
+.kitty-helper-rarity-scale .rarity-row-two .rarity-attributes .rarity-attribute:nth-child(4),
+.kitty-helper-rarity-scale .rarity-row-two .rarity-attributes .rarity-attribute:nth-child(5) {
+    //margin : 6%
+}
+
+.kitty-helper-rarity-scale .rarity-attributes .rarity-attribute .rarity-dot {
+    background-color : red;
+    padding          : 5px;
+    border-radius    : 50%;
+    line-height      : 13px;
+    font-size        : 0px;
+    display          : block;
+    float            : left;
+    height           : 6px;
+    margin-top       : 5px;
+    margin-left      : 4px;
+    margin-right     : 2px;
+}
+
+.kitty-helper-rarity-scale .rarity-attributes .rarity-attribute .rarity-dot.very-rare {
+    /* 2% */
+    background-color : orange;
+}
+
+.kitty-helper-rarity-scale .rarity-attributes .rarity-attribute .rarity-dot.rare {
+    /* 6% */
+    background-color : purple;
+}
+
+.kitty-helper-rarity-scale .rarity-attributes .rarity-attribute .rarity-dot.uncommon {
+    /* 12 % */
+    background-color : blue;
+}
+
+.kitty-helper-rarity-scale .rarity-attributes .rarity-attribute .rarity-dot.common {
+    background-color : #ccc;
+}

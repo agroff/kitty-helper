@@ -1,0 +1,95 @@
+
+html, body {
+    margin  : 0;
+    padding : 0;
+    width   : 340px;
+}
+
+.content {
+    padding : 8px;
+}
+
+.header {
+    background-color : #444;
+    color            : #FFF;
+    padding          : 8px;
+}
+
+.header .span,
+.header .text{
+    vertical-align: middle;
+    display: table-cell;;
+}
+.header h1 {
+    margin : 0;
+    display: table;
+    width:100%;
+}
+
+.header img {
+    display : inline;
+}
+
+#cattribute-table {
+    max-height : 320px;
+    overflow   : auto;
+}
+
+.rarity-block {
+    float          : left;
+    width          : 50%;
+    border-bottom  : 1px solid #efebeb;
+    margin-bottom  : 3px;
+    padding-bottom : 2px;
+}
+
+.rarity-attribute {
+    float : left;
+    width : 75%;
+    font-size:12px;
+}
+
+.rarity-attribute-percent {
+    float     : left;
+    width     : 20%;
+    font-size : 11px;
+}
+
+.rarity-attribute .rarity-dot {
+    background-color : red;
+    padding          : 5px;
+    border-radius    : 50%;
+    line-height      : 13px;
+    font-size        : 0px;
+    display          : block;
+    float            : left;
+    height           : 0px;
+    margin-top       : 3px;
+    margin-left      : 6px;
+    margin-right     : 6px;
+}
+
+.rarity-attribute .rarity-dot.very-rare {
+    /* 2% */
+    background-color : orange;
+}
+
+.rarity-attribute .rarity-dot.rare {
+    /* 6% */
+    background-color : purple;
+}
+
+.rarity-attribute .rarity-dot.uncommon {
+    /* 12 % */
+    background-color : blue;
+}
+
+.rarity-attribute .rarity-dot.common {
+    background-color : #ccc;
+}
+
+.tab-footer {
+    padding     : 5px;
+    text-align  : center;
+    padding-top : 12px;
+}
