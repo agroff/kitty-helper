@@ -34,7 +34,7 @@ You have three options, listed from least effort to most effort (also most secur
 I wont currently accept pull requests with big changes/new features until I finish building out the current vision.
 However, bug fixes and new rarity algorithms are more than welcome. 
 
-##Roadmap
+## Roadmap
 I've got big plans for this guy. Here they are in order:
 1. Add a dropdown to the marketplace to hide/fadeout low reproduction speeds
 2. Implement a "database" layer (probably using `localStorage`) for caching the kitties, ethereum price, and rarity table
