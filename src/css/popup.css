@@ -1,34 +1,116 @@
 
 html, body {
-    margin  : 0;
-    padding : 0;
-    width   : 340px;
+    margin      : 0;
+    padding     : 0;
+    width       : 340px;
+    Font-Family : 'Roboto Condensed', sans-serif;
+    Font-Size   : 14px;
+}
+
+h1, h2, h3, h4, h5, h6 {
+    Font-Family : 'Cabin', sans-serif;
+    color       : #585858;
+    margin      : 2px 0px 10px 0px;
+}
+
+h2 {
+    font-size : 17px;
 }
 
 .content {
-    padding : 8px;
+    padding : 0 8px 8px 8px;
 }
 
+/*  BEGIN HEADER */
 .header {
-    background-color : #444;
-    color            : #FFF;
-    padding          : 8px;
+    background-color : #3c3c3c;
+    padding          : 3px;
+    display          : flex;
+    height           : 25px;
+    border-bottom    : 1px solid #bbbbbb;
 }
 
-.header .span,
-.header .text{
-    vertical-align: middle;
-    display: table-cell;;
+.header h1,
+.header .icon-container {
+    flex-grow : 3;
 }
+
 .header h1 {
-    margin : 0;
-    display: table;
-    width:100%;
+    font-size : 20px;
+    margin    : 0;
+    color     : #dedede;
+    flex-grow : 19;
 }
 
-.header img {
-    display : inline;
+.header .icon-container {
+    text-align : center;
 }
+
+.header .icon-container img {
+    height : 100%;
+}
+
+/*  END HEADER */
+/*  BEGIN NAV */
+
+nav {
+    display : flex;
+}
+
+nav span {
+    margin : 8px;
+    flex-grow        : 1;
+    flex-basis       : auto;
+    background-color : #ccc;
+    border-radius    : 30px;
+    text-align       : center;
+    cursor:pointer;
+}
+
+nav span.selected:hover,
+nav span.selected
+{
+    background-color: orange;
+    color: #444;
+    cursor: text;
+}
+
+nav span:hover{
+    background-color : #7b7b7b;
+    color            : #e8e8e8;
+}
+
+/*  END NAV */
+
+/*  START GENERAL STYLES */
+.underline {
+    border-bottom : 1px solid #eee;
+}
+
+.center {
+    text-align : center;
+}
+
+.row {
+    width : 100%;
+}
+
+/*  END GENERAL STYLES */
+
+/*  START TAB STYLES */
+
+.tab{
+    display:none;
+}
+
+.tab-footer {
+    padding     : 5px;
+    text-align  : center;
+    padding-top : 12px;
+}
+/*  END TAB STYLES */
+
+/*  START CATTRIBUTE TAB STYLES */
 
 #cattribute-table {
     max-height : 320px;
@@ -44,9 +126,9 @@ html, body {
 }
 
 .rarity-attribute {
-    float : left;
-    width : 75%;
-    font-size:12px;
+    float     : left;
+    width     : 75%;
+    font-size : 12px;
 }
 
 .rarity-attribute-percent {
@@ -88,8 +170,30 @@ html, body {
     background-color : #ccc;
 }
 
-.tab-footer {
-    padding     : 5px;
-    text-align  : center;
-    padding-top : 12px;
+/*  END CATTRIBUTE TAB STYLES */
+
+
+
+/*  START ETHEREUM TAB STYLES */
+
+.settings-grid,
+.conversion-grid{
+    display:grid;
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: 1fr;
+    grid-column-gap: 5%;
+    grid-row-gap: 10px;
 }
+
+.conversion-grid label{
+    grid-row-start:1;
+    grid-row-end:1;
+}
+
+/*  END ETHEREUM TAB STYLES */
+
+
+
+/*  START SETTING TAB STYLES */
+
+/*  END SETTING TAB STYLES */

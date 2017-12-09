@@ -23,3 +23,19 @@ $.each(attrs, function(name,item){
 });
 
 $("#cattribute-table").html(html);
+
+var $navLinks = $("nav span");
+
+$navLinks.click(function(){
+    var $item = $(this),
+        idToOpen = $item.attr("data-opens");
+
+    $navLinks.removeClass('selected');
+    $item.addClass("selected");
+
+    $(".tab").hide();
+    $("#"+idToOpen).show();
+
+});
+
+$navLinks.first().trigger("click");

@@ -3,27 +3,32 @@
 <head>
     <meta charset="UTF-8">
     <title>Test</title>
+    <link href="https://fonts.googleapis.com/css?family=Cabin|Roboto:400,700|Roboto+Condensed:400,700" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Lato|Slabo+13px" rel="stylesheet">
 </head>
 <body>
 
 <div class="header">
-    <h1>
-        <span class="span">
-            <img src="img/icon-34.png">
-        </span>
+    <div class="icon-container">
+        <img src="img/icon-128.png">
+    </div>
 
-        <span class="text">
+    <h1>
           Kitty Helper
-        </span>
     </h1>
 </div>
 
+<nav>
+    <span data-opens="cattribute-tab">Cattributes</span>
+    <span data-opens="ethereum-tab">ETH</span>
+    <span data-opens="settings-tab">Settings</span>
+</nav>
+
 <div class="content">
 
+    <div class="tab" id="cattribute-tab">
 
-    <div class="tab">
-
-        <h2>Cattribute Values</h2>
+        <h2 class="underline row">Cattributes</h2>
 
         <div id="cattribute-table">
 
@@ -38,6 +43,62 @@
             </small>
         </div>
 
+    </div>
+
+    <div class="tab" id="ethereum-tab">
+        <h2 class="underline row">Convert your coins</h2>
+
+        <div class="conversion-grid">
+            <label>ETH</label>
+            <input type="text">
+
+            <label>USD</label>
+            <input type="text">
+        </div>
+
+        <div class="tab-footer">
+            <small>
+                This page is not implemented yet.
+            </small>
+        </div>
+    </div>
+
+    <div class="tab" id="settings-tab">
+        <h2 class="underline row">Settings</h2>
+
+        <div class="settings-grid">
+            <label>Scoring Algorithm</label>
+            <select>
+                <option>Main Algorithm</option>
+                <option>Todo... Add more</option>
+            </select>
+
+            <label>Show Rarity Data</label>
+            <select>
+                <option>On Hover</option>
+                <option>Automatically</option>
+                <option>Never</option>
+            </select>
+
+            <label>Show USD Conversion</label>
+            <select>
+                <option>On Hover</option>
+                <option>Automatically</option>
+                <option>Never</option>
+            </select>
+
+            <label>Hidden Kitties Should</label>
+            <select>
+                <option>Be faded out</option>
+                <option>Never appear</option>
+            </select>
+        </div>
+
+        <div class="tab-footer">
+            <small>
+                This page is not implemented yet.
+            </small>
+        </div>
     </div>
 
 </div>
