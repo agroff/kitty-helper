@@ -78,5 +78,5 @@ class FiatConverter {
 }
 
 
-let fiatConverter = new FiatConverter();
-export default fiatConverter;
+
+export default FiatConverter;

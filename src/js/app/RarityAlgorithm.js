@@ -60,7 +60,6 @@ class RarityAlgorithm{
             attributeCount++;
 
             totalScore += score;
-            console.log(attributeName + " ("+ attribute.percent+"%) scored: " + score.toFixed(2));
         });
 
         //poor kitty has no valuable attributes... No redeeming qualities... destined to a life of despair... its prolly cute tho
@@ -82,8 +81,6 @@ class RarityAlgorithm{
             totalScore = 99;
         }
 
-        console.log(kitty.id + ": " + totalScore);
-        console.log("------------------");
         return totalScore;
     }
 }

@@ -1,3 +1,7 @@
+/****************************************
+BEGIN OVERWRITE DEFAULT STYLES
+*****************************************/
+
 html body .KittyStatus--multiple .KittyStatus-item:first-child .KittyStatus-itemText {
     max-width : 700px;
 }
@@ -5,6 +9,20 @@ html body .KittyStatus--multiple .KittyStatus-item:first-child .KittyStatus-item
 .KittyCard-image {
     z-index : 2;
 }
+
+
+
+div.BrowsePage .KittiesGrid-item {
+    opacity:0;
+    transition: opacity .2s;
+}
+
+div.BrowsePage .KittiesGrid-item.kh-processed {
+    opacity:1;
+}
+/****************************************
+BEGIN OVERWRITE DEFAULT STYLES
+*****************************************/
 
 .kitty-helper-rarity-scale {
 

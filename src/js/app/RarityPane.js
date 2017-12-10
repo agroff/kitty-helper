@@ -50,5 +50,4 @@ class RarityPane {
     }
 }
 
-let rarityPane = new RarityPane();
-export default rarityPane;
+export default RarityPane;
