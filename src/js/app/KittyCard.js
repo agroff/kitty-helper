@@ -14,8 +14,8 @@ class KittyCard{
         return speed;
     }
 
-    show(hideMethod='fadeOut'){
-        if(hideMethod === 'fadeOut'){
+    show(hideMethod='fade'){
+        if(hideMethod === 'fade'){
             this.getContainer().css("opacity", "1");
         }
         else {
@@ -23,8 +23,8 @@ class KittyCard{
         }
     }
 
-    hide(hideMethod = 'fadeOut'){
-        if(hideMethod === 'fadeOut') {
+    hide(hideMethod = 'fade'){
+        if(hideMethod === 'fade') {
             this.getContainer().css("opacity", "0.2");
         }
         else {

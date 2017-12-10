@@ -4,6 +4,10 @@ import utils from '../utils';
 
 class RarityPane {
 
+    constructor(){
+        this.settings = {};
+    }
+
     /**
      * Fetch kitty data and render pane if we haven't already.
      *
@@ -12,6 +16,8 @@ class RarityPane {
      * @private
      */
     _ensureRarityPaneExists($card, kittyId) {
+        var self = this;
+
         //check if we've already done this
         if($card.hasClass("has-rarity-scale")) {
             return;
@@ -28,16 +34,23 @@ class RarityPane {
 
             //set class so we know not to render the pane again
             $card.addClass("has-rarity-scale");
+
+            if(self.settings.scoring_algorithm === 'never'){
+                $card.addClass("rarity-hidden");
+            }
         });
     }
 
     /**
      * On enter, get the kitty id from the card, render rarity pane
      * @param $card
+     * @param settings
      */
-    onCardEnter($card) {
+    showRarityPanel($card, settings) {
         //find kitty id
         var kittyId = utils.kittyCardToId($card);
+
+        this.settings = settings;
 
         this._ensureRarityPaneExists($card, kittyId);
     }

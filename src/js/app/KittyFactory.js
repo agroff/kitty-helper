@@ -1,11 +1,15 @@
 import cattributes from "./Cattributes";
-import bgApi from "./bgApi";
+import BgApi from "./BgApi";
 import rarityAlgorithm from './RarityAlgorithm';
 
 /**
  * Literally a factory that makes kitties. Stop asking questions.
  */
 class KittyFactory {
+
+    constructor(){
+        this.bgApi = new BgApi();
+    }
 
     /**
      * Gets the attributes with the custom rarity data added
@@ -65,7 +69,7 @@ class KittyFactory {
             var fullKitty = self._populateKitty(data);
 
             //save kitty to cache
-            bgApi.putKitty(fullKitty);
+            self.bgApi.putKitty(fullKitty);
             callback(fullKitty);
         });
     }
@@ -80,7 +84,7 @@ class KittyFactory {
         var self = this;
 
         //try to load kitty from cache
-        bgApi.getKitty(kittyId, function(fullKitty) {
+        this.bgApi.getKitty(kittyId, function(fullKitty) {
 
             if(fullKitty !== false) {
                 callback(fullKitty);

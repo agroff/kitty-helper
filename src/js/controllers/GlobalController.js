@@ -1,5 +1,6 @@
 import FiatConverter from '../app/FiatConverter';
 import RarityPane from '../app/RarityPane';
+import BgApi from '../app/BgApi';
 
 
 class GlobalController{
@@ -16,6 +17,9 @@ class GlobalController{
 
         this.fiatConverter = fiatConverter;
         this.rarityPane = rarityPane;
+
+        this.api = new BgApi();
+        this.settings = {};
     }
 
     _bindKittyCardHover(){
@@ -26,8 +30,13 @@ class GlobalController{
         this.$body.on("mouseenter", ".KittyCard", function() {
             var $card = $(this);
 
-            self.rarityPane.onCardEnter($card);
-            self.fiatConverter.onEnter($card);
+            if(self.settings.display_rarity !== 'never'){
+                self.rarityPane.showRarityPanel($card, self.settings);
+            }
+
+            if(self.settings.convert_prices !== 'never') {
+                self.fiatConverter.onEnter($card);
+            }
         });
 
         /**
@@ -36,7 +45,7 @@ class GlobalController{
         this.$body.on("mouseleave", ".KittyCard", function() {
             var $card = $(this);
 
-            self.fiatConverter.onLeave($card);
+            self.fiatConverter.onLeave($card, self.settings);
         });
     }
 
@@ -59,10 +68,14 @@ class GlobalController{
     }
 
     run(){
-        this._bindKittyCardHover();
-        this._bindRarityPaneHover()
+        var self = this;
+
+        this.api.getSettings(function(settings){
+            self.settings = settings;
+            self._bindKittyCardHover();
+            self._bindRarityPaneHover();
+        });
     }
 }
 
 export default GlobalController;
- 

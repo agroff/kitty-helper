@@ -10,18 +10,17 @@ html body .KittyStatus--multiple .KittyStatus-item:first-child .KittyStatus-item
     z-index : 2;
 }
 
-
-
 div.BrowsePage .KittiesGrid-item {
-    opacity:0;
-    transition: opacity .2s;
+    opacity    : 0;
+    transition : opacity .2s;
 }
 
 div.BrowsePage .KittiesGrid-item.kh-processed {
-    opacity:1;
+    opacity : 1;
 }
+
 /****************************************
-BEGIN OVERWRITE DEFAULT STYLES
+END OVERWRITE DEFAULT STYLES
 *****************************************/
 
 .kitty-helper-rarity-scale {
@@ -59,6 +58,17 @@ BEGIN OVERWRITE DEFAULT STYLES
     width : 87%;
 }
 
+/**
+rarity hidden case
+ */
+.rarity-hidden .kitty-helper-rarity-scale .rarity-score {
+    display : none;
+}
+
+.rarity-hidden .kitty-helper-rarity-scale .rarity-attributes {
+    width : 97%;
+}
+
 .kitty-helper-rarity-scale .rarity-attributes .rarity-attribute {
     float                 : left;
     width                 : 30%;
@@ -73,7 +83,7 @@ BEGIN OVERWRITE DEFAULT STYLES
     text-align            : left;
     line-height           : 20px;
     padding-right         : 6px;
-    transition: background-color 0.3s;
+    transition            : background-color 0.3s;
 }
 
 .KittyCard.rarity-hovered .kitty-helper-rarity-scale .rarity-attributes .rarity-attribute {

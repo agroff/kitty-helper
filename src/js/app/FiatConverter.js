@@ -55,7 +55,7 @@ class FiatConverter {
         return fiatPrice;
     }
 
-    onEnter($card){
+    showFiatPrice($card){
         var $statusItem = $(".KittyStatus .KittyStatus-itemText", $card).first();
 
         if($statusItem.length === 0) {
@@ -70,10 +70,16 @@ class FiatConverter {
         this._showFiat($statusItem);
     }
 
-    onLeave($card){
+    onEnter($card){
+        this.showFiatPrice($card);
+    }
+
+    onLeave($card, settings){
         var $statusItem = $(".KittyStatus .KittyStatus-itemText", $card).first();
 
-        this._hideFiat($statusItem);
+        if(settings.convert_prices != 'auto') {
+            this._hideFiat($statusItem);
+        }
     }
 }
 

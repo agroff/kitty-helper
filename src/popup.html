@@ -14,14 +14,14 @@
     </div>
 
     <h1>
-          Kitty Helper
+        Kitty Helper
     </h1>
 </div>
 
 <nav>
-    <span data-opens="cattribute-tab">Cattributes</span>
-    <span data-opens="ethereum-tab">ETH</span>
-    <span data-opens="settings-tab">Settings</span>
+    <span id="cattribute-tab-nav" data-opens="cattribute-tab">Cattributes</span>
+    <span id="ethereum-tab-nav" data-opens="ethereum-tab">ETH</span>
+    <span id="settings-tab-nav" data-opens="settings-tab">Settings</span>
 </nav>
 
 <div class="content">
@@ -68,35 +68,36 @@
 
         <div class="settings-grid">
             <label>Scoring Algorithm</label>
-            <select>
-                <option>Main Algorithm</option>
-                <option>Todo... Add more</option>
+            <select class="setting-select" id="scoring_algorithm">
+                <option value="main">Main Algorithm</option>
+                <option value="never">Don't Calculate Rarity</option>
             </select>
 
             <label>Show Rarity Data</label>
-            <select>
-                <option>On Hover</option>
-                <option>Automatically</option>
-                <option>Never</option>
+            <select class="setting-select" id="display_rarity">
+                <option value="auto">Automatically (coming soon)</option>
+                <option value="hover">On Hover</option>
+                <option value="never">Never</option>
             </select>
 
             <label>Show USD Conversion</label>
-            <select>
-                <option>On Hover</option>
-                <option>Automatically</option>
-                <option>Never</option>
+            <select class="setting-select" id="convert_prices">
+                <option value="auto">Automatically</option>
+                <option value="hover">On Hover</option>
+                <option value="never">Never</option>
             </select>
 
             <label>Hidden Kitties Should</label>
-            <select>
-                <option>Be faded out</option>
-                <option>Never appear</option>
+            <select class="setting-select" id="hide_method">
+                <option value="fade">Be faded out</option>
+                <option value="hide">Never appear</option>
+                <option value="disabled">Don't hide the kitties!</option>
             </select>
         </div>
 
         <div class="tab-footer">
             <small>
-                This page is not implemented yet.
+                This page is in progress.
             </small>
         </div>
     </div>

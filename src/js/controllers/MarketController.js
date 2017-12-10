@@ -1,6 +1,8 @@
 import utils from '../utils';
 import config from '../config';
 import KittyCard from '../app/KittyCard'
+import BgApi from '../app/BgApi';
+import FiatConverter from '../app/FiatConverter';
 
 class MarketController {
     constructor() {
@@ -8,6 +10,11 @@ class MarketController {
         this.processedClass = 'kh-processed';
         this.dropdownClass = 'kh-speed-dropdown';
         this.dropdownValueKey = 'kh-min-speed';
+
+        this.fiatConverter = new FiatConverter();
+
+        this.api = new BgApi();
+        this.settings = {};
     }
 
     _getSpeedDropdownOptionHtml() {
@@ -47,9 +54,14 @@ class MarketController {
     }
 
     _processKitty($kittyCard) {
-        var selectedSpeed = $(".speed-select").val();
+        var selectedSpeed = $(".speed-select").val(),
+            settings = this.settings;
 
         this._hideSlowKitty($kittyCard, selectedSpeed);
+
+        if(settings.convert_prices === 'auto'){
+            this.fiatConverter.showFiatPrice($kittyCard);
+        }
 
         $kittyCard.addClass(this.processedClass);
         $kittyCard.closest(".KittiesGrid-item").addClass(this.processedClass);
@@ -58,7 +70,7 @@ class MarketController {
     _hideSlowKitty($kittyCard, selectedSpeed) {
         var speeds       = config.reproductionSpeeds,
             minSpeedRank = 20,
-            hideMethod   = 'hide',
+            hideMethod   = this.settings.hide_method,
             kitty        = new KittyCard($kittyCard),
             speed        = kitty.getSpeed(),
             speedRank    = speeds[speed].rank;
@@ -104,12 +116,17 @@ class MarketController {
     run() {
         var self = this;
 
-        //make sure DOM is fully updated before trying to modify the marketplace page
-        utils.whenSelectorFound('.KittyCard', function() {
-            self._renderSpeedDropdown();
-            self._monitorDom();
-            self._hideSlowKitties();
-            console.log("DOM READY!!!");
+        this.api.getSettings(function(settings){
+            self.settings = settings;
+
+            //make sure DOM is fully updated before trying to modify the marketplace page
+            utils.whenSelectorFound('.KittyCard', function() {
+                if(settings.hide_method !== 'disabled') {
+                    self._renderSpeedDropdown();
+                }
+                self._monitorDom();
+                self._hideSlowKitties();
+            });
         });
     }
 

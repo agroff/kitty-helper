@@ -1,7 +1,7 @@
 {
   "name": "apg-kitty-helper",
-  "version": "0.0.1",
-  "description": "A basic chrome extension to help out with kitty stuff.",
+  "version": "0.0.2",
+  "description": "Upgrade your Crypto Kitties experience to stay ahead of the competition.",
   "scripts": {
     "build": "node utils/build.js",
     "start": "node utils/webserver.js"
