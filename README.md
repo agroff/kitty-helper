@@ -1,4 +1,4 @@
-# Kitty Helper Cyrypto Kitties Extension
+# Kitty Helper Crypto Kitties Extension
 
 A quick extension that adds some features to the crypto kitties website. [See a brief demo here.](https://www.youtube.com/watch?v=iNEFtZSz6EY)
 
