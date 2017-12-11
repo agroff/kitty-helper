@@ -96,7 +96,7 @@ $allData = array(
 if($totalKitties > 100000){
     $json = json_encode( $allData, JSON_PRETTY_PRINT );
 
-    file_put_contents( __DIR__ . 'public/kittyexplorer.json', $json );
+    file_put_contents( __DIR__ . '/public/kittyexplorer.json', $json );
 }
 else {
     echo " ERROR! ";
