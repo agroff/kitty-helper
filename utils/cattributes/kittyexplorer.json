@@ -1,0 +1,364 @@
+{
+    "kittyexplorer": {
+        "total": "233744",
+        "fancy_types": {
+            "Genesis": {
+                "name": "Genesis",
+                "count": 1,
+                "percent": "0"
+            },
+            "BugCat": {
+                "name": "BugCat",
+                "count": 3,
+                "percent": "0.001"
+            },
+            "Mistletoe": {
+                "name": "Mistletoe",
+                "count": 16,
+                "percent": "0.007"
+            },
+            "Dracula": {
+                "name": "Dracula",
+                "count": 147,
+                "percent": "0.063"
+            },
+            "ShipCat": {
+                "name": "ShipCat",
+                "count": 533,
+                "percent": "0.228"
+            },
+            "DuCat": {
+                "name": "DuCat",
+                "count": 2529,
+                "percent": "1.082"
+            }
+        },
+        "cattributes": {
+            "royalblue": {
+                "name": "royalblue",
+                "count": 123,
+                "percent": "0.053"
+            },
+            "wingtips": {
+                "name": "wingtips",
+                "count": 715,
+                "percent": "0.306"
+            },
+            "wolfgrey": {
+                "name": "wolfgrey",
+                "count": 768,
+                "percent": "0.329"
+            },
+            "oldlace": {
+                "name": "oldlace",
+                "count": 886,
+                "percent": "0.379"
+            },
+            "mainecoon": {
+                "name": "mainecoon",
+                "count": 1447,
+                "percent": "0.619"
+            },
+            "gerbil": {
+                "name": "gerbil",
+                "count": 1907,
+                "percent": "0.816"
+            },
+            "violet": {
+                "name": "violet",
+                "count": 2142,
+                "percent": "0.916"
+            },
+            "cerulian": {
+                "name": "cerulian",
+                "count": 2588,
+                "percent": "1.107"
+            },
+            "cottoncandy": {
+                "name": "cottoncandy",
+                "count": 2925,
+                "percent": "1.251"
+            },
+            "fabulous": {
+                "name": "fabulous",
+                "count": 3514,
+                "percent": "1.503"
+            },
+            "chartreux": {
+                "name": "chartreux",
+                "count": 4009,
+                "percent": "1.715"
+            },
+            "jaguar": {
+                "name": "jaguar",
+                "count": 4564,
+                "percent": "1.953"
+            },
+            "whixtensions": {
+                "name": "whixtensions",
+                "count": 7485,
+                "percent": "3.202"
+            },
+            "dali": {
+                "name": "dali",
+                "count": 7700,
+                "percent": "3.294"
+            },
+            "bubblegum": {
+                "name": "bubblegum",
+                "count": 7722,
+                "percent": "3.304"
+            },
+            "googly": {
+                "name": "googly",
+                "count": 8845,
+                "percent": "3.784"
+            },
+            "peach": {
+                "name": "peach",
+                "count": 9129,
+                "percent": "3.906"
+            },
+            "otaku": {
+                "name": "otaku",
+                "count": 9709,
+                "percent": "4.154"
+            },
+            "skyblue": {
+                "name": "skyblue",
+                "count": 11296,
+                "percent": "4.833"
+            },
+            "tigerpunk": {
+                "name": "tigerpunk",
+                "count": 11299,
+                "percent": "4.834"
+            },
+            "limegreen": {
+                "name": "limegreen",
+                "count": 13008,
+                "percent": "5.565"
+            },
+            "bloodred": {
+                "name": "bloodred",
+                "count": 14034,
+                "percent": "6.004"
+            },
+            "scarlet": {
+                "name": "scarlet",
+                "count": 14056,
+                "percent": "6.013"
+            },
+            "beard": {
+                "name": "beard",
+                "count": 14955,
+                "percent": "6.398"
+            },
+            "cloudwhite": {
+                "name": "cloudwhite",
+                "count": 15507,
+                "percent": "6.634"
+            },
+            "calicool": {
+                "name": "calicool",
+                "count": 16920,
+                "percent": "7.239"
+            },
+            "laperm": {
+                "name": "laperm",
+                "count": 17133,
+                "percent": "7.33"
+            },
+            "barkbrown": {
+                "name": "barkbrown",
+                "count": 17678,
+                "percent": "7.563"
+            },
+            "emeraldgreen": {
+                "name": "emeraldgreen",
+                "count": 19304,
+                "percent": "8.259"
+            },
+            "tongue": {
+                "name": "tongue",
+                "count": 19440,
+                "percent": "8.317"
+            },
+            "chestnut": {
+                "name": "chestnut",
+                "count": 19663,
+                "percent": "8.412"
+            },
+            "gold": {
+                "name": "gold",
+                "count": 19951,
+                "percent": "8.535"
+            },
+            "spock": {
+                "name": "spock",
+                "count": 20858,
+                "percent": "8.923"
+            },
+            "mauveover": {
+                "name": "mauveover",
+                "count": 25595,
+                "percent": "10.95"
+            },
+            "shadowgrey": {
+                "name": "shadowgrey",
+                "count": 30484,
+                "percent": "13.042"
+            },
+            "cymric": {
+                "name": "cymric",
+                "count": 30937,
+                "percent": "13.235"
+            },
+            "coffee": {
+                "name": "coffee",
+                "count": 31291,
+                "percent": "13.387"
+            },
+            "salmon": {
+                "name": "salmon",
+                "count": 33829,
+                "percent": "14.473"
+            },
+            "royalpurple": {
+                "name": "royalpurple",
+                "count": 34951,
+                "percent": "14.953"
+            },
+            "mintgreen": {
+                "name": "mintgreen",
+                "count": 35270,
+                "percent": "15.089"
+            },
+            "swampgreen": {
+                "name": "swampgreen",
+                "count": 36787,
+                "percent": "15.738"
+            },
+            "lemonade": {
+                "name": "lemonade",
+                "count": 36827,
+                "percent": "15.755"
+            },
+            "chocolate": {
+                "name": "chocolate",
+                "count": 37257,
+                "percent": "15.939"
+            },
+            "topaz": {
+                "name": "topaz",
+                "count": 37523,
+                "percent": "16.053"
+            },
+            "sphynx": {
+                "name": "sphynx",
+                "count": 37566,
+                "percent": "16.071"
+            },
+            "simple": {
+                "name": "simple",
+                "count": 37953,
+                "percent": "16.237"
+            },
+            "greymatter": {
+                "name": "greymatter",
+                "count": 38079,
+                "percent": "16.291"
+            },
+            "saycheese": {
+                "name": "saycheese",
+                "count": 38083,
+                "percent": "16.293"
+            },
+            "orangesoda": {
+                "name": "orangesoda",
+                "count": 38860,
+                "percent": "16.625"
+            },
+            "aquamarine": {
+                "name": "aquamarine",
+                "count": 39638,
+                "percent": "16.958"
+            },
+            "munchkin": {
+                "name": "munchkin",
+                "count": 40803,
+                "percent": "17.456"
+            },
+            "raisedbrow": {
+                "name": "raisedbrow",
+                "count": 42146,
+                "percent": "18.031"
+            },
+            "soserious": {
+                "name": "soserious",
+                "count": 43227,
+                "percent": "18.493"
+            },
+            "happygokitty": {
+                "name": "happygokitty",
+                "count": 43290,
+                "percent": "18.52"
+            },
+            "ragamuffin": {
+                "name": "ragamuffin",
+                "count": 45992,
+                "percent": "19.676"
+            },
+            "strawberry": {
+                "name": "strawberry",
+                "count": 46268,
+                "percent": "19.794"
+            },
+            "sizzurp": {
+                "name": "sizzurp",
+                "count": 46277,
+                "percent": "19.798"
+            },
+            "himalayan": {
+                "name": "himalayan",
+                "count": 47958,
+                "percent": "20.517"
+            },
+            "pouty": {
+                "name": "pouty",
+                "count": 49533,
+                "percent": "21.191"
+            },
+            "crazy": {
+                "name": "crazy",
+                "count": 60223,
+                "percent": "25.765"
+            },
+            "thicccbrowz": {
+                "name": "thicccbrowz",
+                "count": 62530,
+                "percent": "26.751"
+            },
+            "luckystripe": {
+                "name": "luckystripe",
+                "count": 64406,
+                "percent": "27.554"
+            },
+            "kittencream": {
+                "name": "kittencream",
+                "count": 89831,
+                "percent": "38.431"
+            },
+            "granitegrey": {
+                "name": "granitegrey",
+                "count": 93409,
+                "percent": "39.962"
+            },
+            "totesbasic": {
+                "name": "totesbasic",
+                "count": 107594,
+                "percent": "46.031"
+            }
+        }
+    }
+}

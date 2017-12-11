@@ -1,0 +1,627 @@
+
+
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <!-- Global site tag (gtag.js) - Google Analytics -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=UA-107197715-2"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+    
+      gtag('config', 'UA-107197715-2');
+    </script>
+    <meta name="verifyownership" content="ecaf73562ff02284ab9c5c0bd3d440d8"/>
+
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
+    <title>Kitty Explorer</title>
+
+    <!-- Bootstrap -->
+    <link href="/static/css/bootstrap.min.css" rel="stylesheet">
+
+    <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
+    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+    <!--[if lt IE 9]>
+      <script src="https://oss.maxcdn.com/html5shiv/3.7.3/html5shiv.min.js"></script>
+      <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
+    <![endif]-->
+  </head>
+  <body>
+    <div class="container">
+    
+    <nav class="navbar navbar-default">
+      <div class="container-fluid">
+        <!-- Brand and toggle get grouped for better mobile display -->
+        <div class="navbar-header">
+          <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
+            <span class="sr-only">Toggle navigation</span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+          </button>
+          <a class="navbar-brand" href="/">Kitty Explorer</a>
+        </div>
+    
+        <!-- Collect the nav links, forms, and other content for toggling -->
+        <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+          <ul class="nav navbar-nav">
+            <li><a href="/kitties/">Kitties</a></li>
+            <li><a href="/prices/">Price History</a></li>
+            <li><a href="/stats/">Stats</a></li>
+            <li><a href="/extensions/">Chrome Extension</a></li>
+          </ul>
+          <form class="navbar-form navbar-left" action="/search/" method="GET">
+            <div class="form-group">
+              <input type="text" name="kitty_id" class="form-control" placeholder="Kitty #">
+            </div>
+            <button type="submit" class="btn btn-default">Go To Kitty</button>
+          </form>
+        </div><!-- /.navbar-collapse -->
+      </div><!-- /.container-fluid -->
+    </nav>
+    
+    
+<script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.1.4/Chart.min.js"></script>
+<h3>Total Kitties: 233744</h3>
+<h4>1234 in the last hour</h4>
+<h3>Total <a href="/kitties?fancy=true">Fancy</a> Kitties: 4232</h3>
+<h3>Latest Rare Kitties</h3>
+<div class="row">
+  
+  <div class="col-xs-6 col-md-3">
+      <a href="/kitties/235307" class="thumbnail">
+      <img src="https://storage.googleapis.com/ck-kitty-image/0x06012c8cf97bead5deae237070f9587f8e7a266d/235307.svg" style="background-color: #faf4cf;">
+    </a>
+  </div>
+  
+  <div class="col-xs-6 col-md-3">
+      <a href="/kitties/235308" class="thumbnail">
+      <img src="https://storage.googleapis.com/ck-kitty-image/0x06012c8cf97bead5deae237070f9587f8e7a266d/235308.svg" style="background-color: #faf4cf;">
+    </a>
+  </div>
+  
+  <div class="col-xs-6 col-md-3">
+      <a href="/kitties/235309" class="thumbnail">
+      <img src="https://storage.googleapis.com/ck-kitty-image/0x06012c8cf97bead5deae237070f9587f8e7a266d/235309.svg" style="background-color: #faf4cf;">
+    </a>
+  </div>
+  
+  <div class="col-xs-6 col-md-3">
+      <a href="/kitties/235299" class="thumbnail">
+      <img src="https://storage.googleapis.com/ck-kitty-image/0x06012c8cf97bead5deae237070f9587f8e7a266d/235299.svg" style="background-color: #efe1da;">
+    </a>
+  </div>
+  
+</div>
+<h3>Generation Breakdown</h3>
+<div>
+  <canvas id="generation" width="300" height="75"></canvas>
+  <script type="text/javascript">
+      var ctx = document.getElementById("generation");
+      var arrayGenerationSizes = [2483, 3809, 7177, 12954, 17801, 18913, 18719, 16664, 16049, 14503, 13829, 11781, 10928, 9659, 9549, 8428, 8234, 7593, 7461, 6120, 4777, 3035, 1771, 785, 341, 117, 38, 16, 10, 8, 8, 6, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 4, 4, 4, 4, 4, 4, 4, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1];
+      var arrayGeneration = [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20, 21, 22, 23, 24, 25, 26, 27, 28, 29, 30, 31, 32, 33, 34, 35, 36, 37, 38, 39, 40, 41, 42, 43, 44, 45, 46, 47, 48, 49, 50, 51, 52, 53, 54, 55, 56, 57, 58, 59, 60, 61, 62, 63, 64, 65, 66, 67, 68, 69, 70, 71, 72, 73, 74, 75, 76, 77, 78, 79, 80, 81, 82, 83, 84, 85, 86, 87, 88, 89, 90, 91, 92, 93, 94, 95, 96, 97, 98, 99, 100, 101];
+
+
+      var generation = new Chart(ctx, {
+          type: 'line',
+          options: {
+            animation: false,
+		    tooltips: {
+              mode: 'label',
+            },
+            hover: {
+              mode: 'label'
+            },
+          },
+          data: {
+            labels: arrayGeneration,
+            datasets: [{
+              label: 'Total Kitties',
+              data: arrayGenerationSizes,
+              backgroundColor: 'rgba(255, 99, 132, 0.2)',
+              borderColor: 'rgba(255,99,132,1)',
+              borderWidth: 1
+            }]
+          },
+      });
+
+  </script>
+</div>
+
+<div>
+  <h3>Kitty Colors</h3>
+
+  <canvas id="colors" width="200" height="200"></canvas>
+  <script>
+    var ctx = document.getElementById("colors");
+    var dataset = {"chestnut": 20361, "mintgreen": 36384, "gold": 20584, "strawberry": 48080, "limegreen": 13497, "bubblegum": 8013, "topaz": 38888, "sizzurp": 47878};
+
+    var kittyColorLabels = [];
+    var numbers = [];
+
+    Object.keys(dataset).forEach(function(key, index) {
+      kittyColorLabels.push(key);
+      numbers.push(dataset[key]);
+    });
+
+    var colors = new Chart(ctx, {
+      type: 'doughnut',
+      options: {
+	    maintainAspectRatio: false,
+        animation: false
+      },
+      data: {
+        labels: kittyColorLabels,
+        datasets: [{
+          backgroundColor: [
+            "#954535", //chestnut
+            "#98ff98", //mint
+            "#FFD700", //gold
+            "#80ffff", //topaz
+            "#32cd32", //lime
+            "#551A8B", //sizzurp
+            "#ffc1cc", //bubblegum
+            "#fc5a8d" //strawnerry
+          ],
+          data: numbers
+        }]
+      }
+    });
+  </script>
+</div> 
+
+<h3>Fancy Types</h3>
+
+<a href="/kitties/?fancy=Genesis">
+<button class="btn btn-primary" type="button" style="margin: 3px;">
+    Genesis <span class="badge">1</span>
+</button>
+</a>
+
+<a href="/kitties/?fancy=BugCat">
+<button class="btn btn-primary" type="button" style="margin: 3px;">
+    BugCat <span class="badge">3</span>
+</button>
+</a>
+
+<a href="/kitties/?fancy=Mistletoe">
+<button class="btn btn-primary" type="button" style="margin: 3px;">
+    Mistletoe <span class="badge">16</span>
+</button>
+</a>
+
+<a href="/kitties/?fancy=Dracula">
+<button class="btn btn-primary" type="button" style="margin: 3px;">
+    Dracula <span class="badge">147</span>
+</button>
+</a>
+
+<a href="/kitties/?fancy=ShipCat">
+<button class="btn btn-primary" type="button" style="margin: 3px;">
+    ShipCat <span class="badge">533</span>
+</button>
+</a>
+
+<a href="/kitties/?fancy=DuCat">
+<button class="btn btn-primary" type="button" style="margin: 3px;">
+    DuCat <span class="badge">2529</span>
+</button>
+</a>
+
+
+<h3>Cattributes</h3>
+
+<a href="/kitties/?cattributes=royalblue">
+<button class="btn btn-primary" type="button" style="margin: 3px;">
+    royalblue <span class="badge">123</span>
+</button>
+</a>
+
+<a href="/kitties/?cattributes=wingtips">
+<button class="btn btn-primary" type="button" style="margin: 3px;">
+    wingtips <span class="badge">715</span>
+</button>
+</a>
+
+<a href="/kitties/?cattributes=wolfgrey">
+<button class="btn btn-primary" type="button" style="margin: 3px;">
+    wolfgrey <span class="badge">768</span>
+</button>
+</a>
+
+<a href="/kitties/?cattributes=oldlace">
+<button class="btn btn-primary" type="button" style="margin: 3px;">
+    oldlace <span class="badge">886</span>
+</button>
+</a>
+
+<a href="/kitties/?cattributes=mainecoon">
+<button class="btn btn-primary" type="button" style="margin: 3px;">
+    mainecoon <span class="badge">1447</span>
+</button>
+</a>
+
+<a href="/kitties/?cattributes=gerbil">
+<button class="btn btn-primary" type="button" style="margin: 3px;">
+    gerbil <span class="badge">1907</span>
+</button>
+</a>
+
+<a href="/kitties/?cattributes=violet">
+<button class="btn btn-primary" type="button" style="margin: 3px;">
+    violet <span class="badge">2142</span>
+</button>
+</a>
+
+<a href="/kitties/?cattributes=cerulian">
+<button class="btn btn-primary" type="button" style="margin: 3px;">
+    cerulian <span class="badge">2588</span>
+</button>
+</a>
+
+<a href="/kitties/?cattributes=cottoncandy">
+<button class="btn btn-primary" type="button" style="margin: 3px;">
+    cottoncandy <span class="badge">2925</span>
+</button>
+</a>
+
+<a href="/kitties/?cattributes=fabulous">
+<button class="btn btn-primary" type="button" style="margin: 3px;">
+    fabulous <span class="badge">3514</span>
+</button>
+</a>
+
+<a href="/kitties/?cattributes=chartreux">
+<button class="btn btn-primary" type="button" style="margin: 3px;">
+    chartreux <span class="badge">4009</span>
+</button>
+</a>
+
+<a href="/kitties/?cattributes=jaguar">
+<button class="btn btn-primary" type="button" style="margin: 3px;">
+    jaguar <span class="badge">4564</span>
+</button>
+</a>
+
+<a href="/kitties/?cattributes=whixtensions">
+<button class="btn btn-primary" type="button" style="margin: 3px;">
+    whixtensions <span class="badge">7485</span>
+</button>
+</a>
+
+<a href="/kitties/?cattributes=dali">
+<button class="btn btn-primary" type="button" style="margin: 3px;">
+    dali <span class="badge">7700</span>
+</button>
+</a>
+
+<a href="/kitties/?cattributes=bubblegum">
+<button class="btn btn-primary" type="button" style="margin: 3px;">
+    bubblegum <span class="badge">7722</span>
+</button>
+</a>
+
+<a href="/kitties/?cattributes=googly">
+<button class="btn btn-primary" type="button" style="margin: 3px;">
+    googly <span class="badge">8845</span>
+</button>
+</a>
+
+<a href="/kitties/?cattributes=peach">
+<button class="btn btn-primary" type="button" style="margin: 3px;">
+    peach <span class="badge">9129</span>
+</button>
+</a>
+
+<a href="/kitties/?cattributes=otaku">
+<button class="btn btn-primary" type="button" style="margin: 3px;">
+    otaku <span class="badge">9709</span>
+</button>
+</a>
+
+<a href="/kitties/?cattributes=skyblue">
+<button class="btn btn-primary" type="button" style="margin: 3px;">
+    skyblue <span class="badge">11296</span>
+</button>
+</a>
+
+<a href="/kitties/?cattributes=tigerpunk">
+<button class="btn btn-primary" type="button" style="margin: 3px;">
+    tigerpunk <span class="badge">11299</span>
+</button>
+</a>
+
+<a href="/kitties/?cattributes=limegreen">
+<button class="btn btn-primary" type="button" style="margin: 3px;">
+    limegreen <span class="badge">13008</span>
+</button>
+</a>
+
+<a href="/kitties/?cattributes=bloodred">
+<button class="btn btn-primary" type="button" style="margin: 3px;">
+    bloodred <span class="badge">14034</span>
+</button>
+</a>
+
+<a href="/kitties/?cattributes=scarlet">
+<button class="btn btn-primary" type="button" style="margin: 3px;">
+    scarlet <span class="badge">14056</span>
+</button>
+</a>
+
+<a href="/kitties/?cattributes=beard">
+<button class="btn btn-primary" type="button" style="margin: 3px;">
+    beard <span class="badge">14955</span>
+</button>
+</a>
+
+<a href="/kitties/?cattributes=cloudwhite">
+<button class="btn btn-primary" type="button" style="margin: 3px;">
+    cloudwhite <span class="badge">15507</span>
+</button>
+</a>
+
+<a href="/kitties/?cattributes=calicool">
+<button class="btn btn-primary" type="button" style="margin: 3px;">
+    calicool <span class="badge">16920</span>
+</button>
+</a>
+
+<a href="/kitties/?cattributes=laperm">
+<button class="btn btn-primary" type="button" style="margin: 3px;">
+    laperm <span class="badge">17133</span>
+</button>
+</a>
+
+<a href="/kitties/?cattributes=barkbrown">
+<button class="btn btn-primary" type="button" style="margin: 3px;">
+    barkbrown <span class="badge">17678</span>
+</button>
+</a>
+
+<a href="/kitties/?cattributes=emeraldgreen">
+<button class="btn btn-primary" type="button" style="margin: 3px;">
+    emeraldgreen <span class="badge">19304</span>
+</button>
+</a>
+
+<a href="/kitties/?cattributes=tongue">
+<button class="btn btn-primary" type="button" style="margin: 3px;">
+    tongue <span class="badge">19440</span>
+</button>
+</a>
+
+<a href="/kitties/?cattributes=chestnut">
+<button class="btn btn-primary" type="button" style="margin: 3px;">
+    chestnut <span class="badge">19663</span>
+</button>
+</a>
+
+<a href="/kitties/?cattributes=gold">
+<button class="btn btn-primary" type="button" style="margin: 3px;">
+    gold <span class="badge">19951</span>
+</button>
+</a>
+
+<a href="/kitties/?cattributes=spock">
+<button class="btn btn-primary" type="button" style="margin: 3px;">
+    spock <span class="badge">20858</span>
+</button>
+</a>
+
+<a href="/kitties/?cattributes=mauveover">
+<button class="btn btn-primary" type="button" style="margin: 3px;">
+    mauveover <span class="badge">25595</span>
+</button>
+</a>
+
+<a href="/kitties/?cattributes=shadowgrey">
+<button class="btn btn-primary" type="button" style="margin: 3px;">
+    shadowgrey <span class="badge">30484</span>
+</button>
+</a>
+
+<a href="/kitties/?cattributes=cymric">
+<button class="btn btn-primary" type="button" style="margin: 3px;">
+    cymric <span class="badge">30937</span>
+</button>
+</a>
+
+<a href="/kitties/?cattributes=coffee">
+<button class="btn btn-primary" type="button" style="margin: 3px;">
+    coffee <span class="badge">31291</span>
+</button>
+</a>
+
+<a href="/kitties/?cattributes=salmon">
+<button class="btn btn-primary" type="button" style="margin: 3px;">
+    salmon <span class="badge">33829</span>
+</button>
+</a>
+
+<a href="/kitties/?cattributes=royalpurple">
+<button class="btn btn-primary" type="button" style="margin: 3px;">
+    royalpurple <span class="badge">34951</span>
+</button>
+</a>
+
+<a href="/kitties/?cattributes=mintgreen">
+<button class="btn btn-primary" type="button" style="margin: 3px;">
+    mintgreen <span class="badge">35270</span>
+</button>
+</a>
+
+<a href="/kitties/?cattributes=swampgreen">
+<button class="btn btn-primary" type="button" style="margin: 3px;">
+    swampgreen <span class="badge">36787</span>
+</button>
+</a>
+
+<a href="/kitties/?cattributes=lemonade">
+<button class="btn btn-primary" type="button" style="margin: 3px;">
+    lemonade <span class="badge">36827</span>
+</button>
+</a>
+
+<a href="/kitties/?cattributes=chocolate">
+<button class="btn btn-primary" type="button" style="margin: 3px;">
+    chocolate <span class="badge">37257</span>
+</button>
+</a>
+
+<a href="/kitties/?cattributes=topaz">
+<button class="btn btn-primary" type="button" style="margin: 3px;">
+    topaz <span class="badge">37523</span>
+</button>
+</a>
+
+<a href="/kitties/?cattributes=sphynx">
+<button class="btn btn-primary" type="button" style="margin: 3px;">
+    sphynx <span class="badge">37566</span>
+</button>
+</a>
+
+<a href="/kitties/?cattributes=simple">
+<button class="btn btn-primary" type="button" style="margin: 3px;">
+    simple <span class="badge">37953</span>
+</button>
+</a>
+
+<a href="/kitties/?cattributes=greymatter">
+<button class="btn btn-primary" type="button" style="margin: 3px;">
+    greymatter <span class="badge">38079</span>
+</button>
+</a>
+
+<a href="/kitties/?cattributes=saycheese">
+<button class="btn btn-primary" type="button" style="margin: 3px;">
+    saycheese <span class="badge">38083</span>
+</button>
+</a>
+
+<a href="/kitties/?cattributes=orangesoda">
+<button class="btn btn-primary" type="button" style="margin: 3px;">
+    orangesoda <span class="badge">38860</span>
+</button>
+</a>
+
+<a href="/kitties/?cattributes=aquamarine">
+<button class="btn btn-primary" type="button" style="margin: 3px;">
+    aquamarine <span class="badge">39638</span>
+</button>
+</a>
+
+<a href="/kitties/?cattributes=munchkin">
+<button class="btn btn-primary" type="button" style="margin: 3px;">
+    munchkin <span class="badge">40803</span>
+</button>
+</a>
+
+<a href="/kitties/?cattributes=raisedbrow">
+<button class="btn btn-primary" type="button" style="margin: 3px;">
+    raisedbrow <span class="badge">42146</span>
+</button>
+</a>
+
+<a href="/kitties/?cattributes=soserious">
+<button class="btn btn-primary" type="button" style="margin: 3px;">
+    soserious <span class="badge">43227</span>
+</button>
+</a>
+
+<a href="/kitties/?cattributes=happygokitty">
+<button class="btn btn-primary" type="button" style="margin: 3px;">
+    happygokitty <span class="badge">43290</span>
+</button>
+</a>
+
+<a href="/kitties/?cattributes=ragamuffin">
+<button class="btn btn-primary" type="button" style="margin: 3px;">
+    ragamuffin <span class="badge">45992</span>
+</button>
+</a>
+
+<a href="/kitties/?cattributes=strawberry">
+<button class="btn btn-primary" type="button" style="margin: 3px;">
+    strawberry <span class="badge">46268</span>
+</button>
+</a>
+
+<a href="/kitties/?cattributes=sizzurp">
+<button class="btn btn-primary" type="button" style="margin: 3px;">
+    sizzurp <span class="badge">46277</span>
+</button>
+</a>
+
+<a href="/kitties/?cattributes=himalayan">
+<button class="btn btn-primary" type="button" style="margin: 3px;">
+    himalayan <span class="badge">47958</span>
+</button>
+</a>
+
+<a href="/kitties/?cattributes=pouty">
+<button class="btn btn-primary" type="button" style="margin: 3px;">
+    pouty <span class="badge">49533</span>
+</button>
+</a>
+
+<a href="/kitties/?cattributes=crazy">
+<button class="btn btn-primary" type="button" style="margin: 3px;">
+    crazy <span class="badge">60223</span>
+</button>
+</a>
+
+<a href="/kitties/?cattributes=thicccbrowz">
+<button class="btn btn-primary" type="button" style="margin: 3px;">
+    thicccbrowz <span class="badge">62530</span>
+</button>
+</a>
+
+<a href="/kitties/?cattributes=luckystripe">
+<button class="btn btn-primary" type="button" style="margin: 3px;">
+    luckystripe <span class="badge">64406</span>
+</button>
+</a>
+
+<a href="/kitties/?cattributes=kittencream">
+<button class="btn btn-primary" type="button" style="margin: 3px;">
+    kittencream <span class="badge">89831</span>
+</button>
+</a>
+
+<a href="/kitties/?cattributes=granitegrey">
+<button class="btn btn-primary" type="button" style="margin: 3px;">
+    granitegrey <span class="badge">93409</span>
+</button>
+</a>
+
+<a href="/kitties/?cattributes=totesbasic">
+<button class="btn btn-primary" type="button" style="margin: 3px;">
+    totesbasic <span class="badge">107594</span>
+</button>
+</a>
+
+
+
+    
+    <div style="margin-top: 25px;margin-bottom: 20px;">
+      <a href="/sale/"><h2>KittyExplorer.com is for sale!</h2></a>
+      <span>
+          Join our <a href="https://discord.gg/5Wguyxn">Cryptocurrency Discord Server</a>.<br />
+          Copyright 2017 Salina Labs, Inc.
+      </span>
+    </div>
+    
+    </div>
+    <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+    <!-- Include all compiled plugins (below), or include individual files as needed -->
+    <script src="/static/js/bootstrap.min.js"></script>
+    
+
+  </body>
+</html>
