@@ -15,20 +15,20 @@ You have three options, listed from least effort to most effort (also most secur
 3. Build from source. See following section
 
 ### Building from source
-*I am leaving this section from the Extension Boilerplate I forked. No idea if it really works.*
+*I'm leaving this section from the Extension Boilerplate I forked. If someone could test that it works it'd be appreciated.*
+
+Requires a newer version of node, I'm using 8.8
 
 1. Clone the repository.
 2. Install [yarn](https://yarnpkg.com): `npm install -g yarn`.
 3. Run `yarn`.
-4. Change the package's name and description on `package.json`.
-5. Change the name of your extension on `src/manifest.json`.
-6. Run `npm run start`
-7. Load your extension on Chrome following:
+4. Run `npm run start`
+5. Load your extension on Chrome following:
     1. Access `chrome://extensions/`
     2. Check `Developer mode`
     3. Click on `Load unpacked extension`
     4. Select the `build` folder.
-8. Have fun.
+6. Have fun.
 
 ## Contributions
 I wont currently accept pull requests with big changes/new features until I finish building out the current vision.
