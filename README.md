@@ -1,6 +1,6 @@
 # Kitty Helper Cyrypto Kitties Extension
 
-A quick extension that adds some features to the crypto kitties website. [See a brief demo here.](https://gfycat.com/gifs/detail/GrotesqueYellowBlowfish)
+A quick extension that adds some features to the crypto kitties website. [See a brief demo here.](https://www.youtube.com/watch?v=iNEFtZSz6EY)
 
 ## How to use it
 You have three options, listed from least effort to most effort (also most secure).
