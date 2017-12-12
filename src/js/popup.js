@@ -3,12 +3,15 @@ import cattributes from "./app/Cattributes";
 import $ from "./lib/jquery-3.2.1.min";
 import numeral from "numeral";
 import SettingsController from './controllers/SettingsController';
+import DataLoader from './app/DataLoader';
+import EthereumConversionController from './controllers/EthereumConversionController';
 
 window.$ = $;
 
 var cattributeTab = {
-    renderTable: function(attributes) {
-        var html = "";
+    renderTable: function(attributes, rarity) {
+        var html = "",
+            total = rarity.total_kitties;
 
         $.each(attributes, function(name, item) {
             html += `
@@ -17,14 +20,21 @@ var cattributeTab = {
         <span class="rarity-dot ${item.rarity}"></span>
         ${name}
     </div>
-    <div class="rarity-attribute-percent">
-        ${numeral(item.percent).format('0.00a') }%
+    <div class="rarity-attribute-percent" title="">
+        <span class="cattribute-percent">
+            ${numeral(item.percent).format('0.00a') }%
+        </span>
+        <span class="cattribute-count">
+            ${item.count} kitties
+        </span>
+            
     </div>
 </div>
 `;
         });
 
         $("#cattribute-table").html(html);
+        $("#cattribute-count").html(numeral(total).format('0,0') + ' Kitties');
     }
 };
 
@@ -63,11 +73,22 @@ $(document).ready(function() {
     });
 });
 
-var attributes = cattributes.fetch();
-var settingsController = new SettingsController();
+var dataLoader = new DataLoader();
+dataLoader.loadEverything(function(data) {
+    window.KH = data;
+    console.log(data);
 
-cattributeTab.renderTable(attributes);
-navigation.initialize();
-settingsController.run();
+    var attributes = cattributes.fetch(),
+        rarity = cattributes.fetchRarity();
+    var settingsController = new SettingsController();
+    var ethController = new EthereumConversionController();
+
+    cattributeTab.renderTable(attributes, rarity);
+    navigation.initialize();
+
+    settingsController.run();
+    ethController.run();
+});
+
 
 

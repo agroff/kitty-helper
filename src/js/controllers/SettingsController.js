@@ -9,7 +9,8 @@ class SettingsController{
             "scoring_algorithm",
             "display_rarity",
             "convert_prices",
-            "hide_method"
+            "hide_method",
+            "display_cattributes"
         ];
     }
 

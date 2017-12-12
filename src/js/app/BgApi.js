@@ -46,6 +46,22 @@ class BgApi {
         this._apiCall(request);
     }
 
+    getCattributes(callback){
+        var request = {
+            method: "getCattributes",
+        };
+
+        this._apiCall(request, callback);
+    }
+
+    getEthereumPrice(callback){
+        var request = {
+            method: "getEthereumPrice",
+        };
+
+        this._apiCall(request, callback);
+    }
+
 }
 
 //var bgApi = new BgApi();

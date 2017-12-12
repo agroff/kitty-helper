@@ -4,8 +4,25 @@ import utils from '../utils';
 
 class RarityPane {
 
-    constructor(){
+    constructor() {
         this.settings = {};
+    }
+
+    _loadingKitty($card) {
+        var html = `
+<div class="kitty-loader">
+    <div class="spinner">
+      <div class="bounce1"></div>
+      <div class="bounce2"></div>
+      <div class="bounce3"></div>
+    </div>
+</div>
+`;
+        $card.append(html);
+    }
+
+    _kittyLoaded($card) {
+        $(".kitty-loader", $card).remove();
     }
 
     /**
@@ -23,8 +40,11 @@ class RarityPane {
             return;
         }
 
+        this._loadingKitty($card);
         //get the kitty data
         kittyFactory.getKitty(kittyId, function(kitty) {
+
+            self._kittyLoaded($card);
 
             //turn the kitty into html
             var rarityPaneHtml = rarityPaneTemplate.getHtml(kitty);
@@ -35,7 +55,7 @@ class RarityPane {
             //set class so we know not to render the pane again
             $card.addClass("has-rarity-scale");
 
-            if(self.settings.scoring_algorithm === 'never'){
+            if(self.settings.scoring_algorithm === 'never') {
                 $card.addClass("rarity-hidden");
             }
         });

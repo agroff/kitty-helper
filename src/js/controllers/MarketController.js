@@ -3,6 +3,7 @@ import config from '../config';
 import KittyCard from '../app/KittyCard'
 import BgApi from '../app/BgApi';
 import FiatConverter from '../app/FiatConverter';
+import RarityPane from '../app/RarityPane';
 
 class MarketController {
     constructor() {
@@ -12,6 +13,7 @@ class MarketController {
         this.dropdownValueKey = 'kh-min-speed';
 
         this.fiatConverter = new FiatConverter();
+        this.rarityPane = new RarityPane();
 
         this.api = new BgApi();
         this.settings = {};
@@ -61,6 +63,12 @@ class MarketController {
 
         if(settings.convert_prices === 'auto'){
             this.fiatConverter.showFiatPrice($kittyCard);
+        }
+        if(settings.display_cattributes === 'auto') {
+            $kittyCard.addClass('rarity-hovered');
+        }
+        if(settings.display_rarity === 'auto') {
+            this.rarityPane.showRarityPanel($kittyCard, settings);
         }
 
         $kittyCard.addClass(this.processedClass);

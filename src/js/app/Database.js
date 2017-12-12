@@ -38,7 +38,9 @@ class Database {
 
         this.data.rarity = {
             "total_kitties": 0,
-            "attributes"   : {}
+            "attributes"   : {},
+            "fancy" : {},
+            "updated" : "0"
         };
 
         this.data.kitties = [];
@@ -55,6 +57,7 @@ class Database {
             "display_rarity"   : "hover",
             "convert_prices"   : "hover",
             "hide_method"      : "fade",
+            "display_cattributes" : "hover",
             "rarity_thresholds": {
                 "legendary": "3",
                 "epic"     : "7.5",
@@ -94,7 +97,8 @@ class Database {
      * @returns {*|{scoring_algorithm: string, display_rarity: string, convert_prices: string, hide_method: string, rarity_thresholds: {legendary: string, epic: string, rare: string, uncommon: string}}}
      */
     getSettings() {
-        return this.data.settings;
+        var defaultSettings =  this._getDefaultSettings();
+        return $.extend({}, defaultSettings, this.data.settings);
     }
 
     /**
@@ -103,6 +107,44 @@ class Database {
      */
     putSettings(settings) {
         this.data.settings = settings;
+        this._persistData();
+    }
+
+    /**
+     * Returns current rarity
+     * @returns
+     */
+    getRarity() {
+        this._loadData();
+        return this.data.rarity;
+    }
+
+    /**
+     * Saves current Rarity
+     * @returns
+     */
+    putRarity(rarity) {
+        this.data.rarity = rarity;
+        this._persistData();
+    }
+
+    /**
+     * Returns current Ethereum pricing
+     * @returns
+     */
+    getEthereum() {
+        this._loadData();
+        console.log("requesting ETH", this.data.ethereum);
+        return this.data.ethereum;
+    }
+
+    /**
+     * Saves current Ethereum pricing
+     * @returns
+     */
+    putEthereum(ethereum) {
+        console.log("saving ETH", ethereum);
+        this.data.ethereum = ethereum;
         this._persistData();
     }
 }

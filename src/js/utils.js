@@ -72,6 +72,21 @@ export default {
         };
     },
 
+    formatSeconds : function(milliseconds){
+        return (milliseconds / 1000).toFixed(2) +'s';
+    },
+
+    olderThan : function(minutes, timestamp){
+        var now = Date.now(),
+            difference = now - timestamp,
+            maxDifference = minutes * 60 * 1000;
+
+        //console.log("comparing: " + this.formatSeconds(difference) + " to " + this.formatSeconds(maxDifference));
+
+        return difference > maxDifference;
+
+    },
+
     /**
      * Regex helpers
      */

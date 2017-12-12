@@ -28,7 +28,12 @@
 
     <div class="tab" id="cattribute-tab">
 
-        <h2 class="underline row">Cattributes</h2>
+        <h2 class="underline row">
+            Cattributes
+            <small id="cattribute-count">
+
+            </small>
+        </h2>
 
         <div id="cattribute-table">
 
@@ -46,19 +51,36 @@
     </div>
 
     <div class="tab" id="ethereum-tab">
-        <h2 class="underline row">Convert your coins</h2>
+        <h2 class="underline half row">
+            Convert Currency
+        </h2>
+        <h2 class="underline half row center">
+            ETH Price
+        </h2>
 
         <div class="conversion-grid">
             <label>ETH</label>
-            <input type="text">
+            <input id="convertEth" type="text">
 
             <label>USD</label>
-            <input type="text">
+            <input id="convertUsd" type="text">
+
+            <div class="ethereum-price-container">
+                <span class="eth-change">+$64.65 24H</span>
+                <h1 class="eth-price">$520.43</h1>
+                <span class="eth-updated">Updated 12/11 11:14PM</span>
+            </div>
         </div>
+
+
 
         <div class="tab-footer">
             <small>
-                This page is not implemented yet.
+                Cute kitties or boring ETH accepted here:
+            </small>
+            <br>
+            <small class="fade">
+                0x8c470bb21254a25fdf478dc94c1e2d07f69d4a4e
             </small>
         </div>
     </div>
@@ -75,9 +97,15 @@
 
             <label>Show Rarity Data</label>
             <select class="setting-select" id="display_rarity">
-                <option value="auto">Automatically (coming soon)</option>
+                <option value="auto">Automatically</option>
                 <option value="hover">On Hover</option>
                 <option value="never">Never</option>
+            </select>
+
+            <label>Show Common Cattributes</label>
+            <select class="setting-select" id="display_cattributes">
+                <option value="auto">Automatically</option>
+                <option value="hover">On Hover</option>
             </select>
 
             <label>Show USD Conversion</label>
@@ -87,12 +115,14 @@
                 <option value="never">Never</option>
             </select>
 
+            <!--
             <label>Hidden Kitties Should</label>
             <select class="setting-select" id="hide_method">
                 <option value="fade">Be faded out</option>
                 <option value="hide">Never appear</option>
                 <option value="disabled">Don't hide the kitties!</option>
             </select>
+            -->
         </div>
 
         <div class="tab-footer">
