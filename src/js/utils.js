@@ -8,7 +8,7 @@ export default {
      */
     kittyCardToId: function($card) {
         var $parent = $card.closest(".KittyCard-wrapper"),
-            idText  = $(".KittyCard-subname", $parent).text(),
+            idText  = $(".KittyCard-details-item:eq(0)", $parent).text(),
             re      = /Kitty\s(\d+)/i;
 
         return this.regex.extractFirstMatch(re, idText)

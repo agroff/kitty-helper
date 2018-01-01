@@ -9,7 +9,7 @@ class KittyCard{
     }
 
     getSpeed(){
-        var speed = $(".KittyCard-coldown", this.getContainer()).text();
+        var speed = $(".KittyCard-details-item:eq(2)", this.getContainer()).text();
         speed = $.trim(speed).toLowerCase();
         return speed;
     }
